@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            #main-container{
+                border: 1px solid black;
+                width: 50%;
+                margin: 2em auto;
+                aspect-ratio:3/2;
+                display: flex;
+                flex-direction: column;
+            }
+            #table-bar{
+                flex-grow: 1;
+                display: flex;
+            }
+            #color-table{
+                display: inline-block;
+                background-color: wheat;
+                flex-grow: 9;
+            }
+            #opacity-bar-container{
+                display: flex;
+                background-color: pink;
+                flex-grow: 1;
+                align-items: center;
+                justify-content: center;
+            }
+            #rgb-bars{
+                flex-grow: 0.7;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+            }
+            .bar-container{
+                flex-grow: 1;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #red-bar-container{
+                background-color: red;
+            }
+            #green-bar-container{
+                background-color: green;
+            }
+            #blue-bar-container{
+                background-color: blue;
+            }
+            #red-bar{
+            }
+            #green-bar{
+            }
+            #blue-bar{
+            }
+            .bar{
+                height: 50%;
+                width: 80%;
+                border: 1px solid black;
+                margin-left: 25px;
+                position: relative;
+
+            }
+            .swiper{
+                display: inline-block;
+                width: 10px;
+                height: 100%;
+                background-color: aqua;
+                position: absolute;
+            }
+            #swiper-red{
+
+            }
+            #swiper-green{
+
+            }
+            #swiper-blue{
+
+            }
+            [id $=data]{
+                display: flex;
+                background-color: white;
+                height: 3em;
+                width: 5em;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #opacity-value{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #opacity-value-text{
+                height: 50px;
+                aspect-ratio: 2;
+            }
+
+            #data-list{
+                background-color: gray;
+                flex-grow: 0.3;
+                display: flex;
+                align-items: center;
+                justify-content:space-between;               
+            }
+            #data-list-rgb input{
+                width: 5em;
+                height: 2em;
+            }
+        </style>
+        <script>
+            "use strict"
+            window.onload = start;
+            function start(){
+                const red_bar = document.getElementById("red-bar");
+                const green_bar = document.getElementById("green-bar");
+                const blue_bar = document.getElementById("blue-bar");
+                const red_swiper = document.getElementById("swiper-red");
+                const green_swiper = document.getElementById("swiper-green");
+                const blue_swiper = document.getElementById("swiper-blue");
+                const swipers = document.querySelectorAll(".swiper");
+                const dataInputs = document.querySelectorAll("input[id$=data]");
+                const opacityData = document.getElementById("opacity-value-text");
+
+                for(let i of swipers){
+                    i.addEventListener("mousedown",mouseDown);
+                }
+
+                window.addEventListener("resize",function(){
+                    for(let i of swipers){
+                        if( (i.getBoundingClientRect().left - i.offsetWidth/2) > (i.parentElement.getBoundingClientRect().left + i.parentElement.offsetWidth) ){
+                            i.style.left=i.parentElement.offsetWidth - i.offsetWidth*1.5 +"px";
+                            
+                        }
+                    }
+                });
+
+                opacityData.addEventListener("input",opacityFunction);
+
+                function opacityFunction(abc){
+                    if(abc.target.value[0]==0)
+                           abc.target.value=abc.target.value.slice(1);
+                    if(opacityData.value>100)
+                        opacityData.value=100
+                    if(opacityData.value<0)
+                        opacityData.value=0
+
+                    document.getElementById("color-table").style.opacity = abc.target.value/100;                    
+                }
+
+                for(let i of dataInputs){
+                    i.addEventListener("input",function(abc){  
+                        if(i.value[0] == 0 && abc.key!="." && i.value.length==2)
+                           i.value=i.value.slice(1);
+                        if(i.value>255)
+                            i.value=255;
+                        if(i.value<0)
+                            i.value=0; 
+
+                        printColorTable();
+                        printDataList();
+
+                        let swiper = document.querySelector( `[id=swiper-${ i.id.slice( 0 , i.id.indexOf("-") ) } ]` );
+                        
+                        swiper.style.left=x*i.value+"px";
+                    });
+                }
+                let x;
+                function mouseDown(argument){
+                    let swiper = argument.target;
+                    let swiperp = argument.target.parentElement;
+                    swiperp.addEventListener("mousemove",mouseMove);
+                    function mouseMove(){
+                        let bar = event.clientX - swiperp.getBoundingClientRect().left;
+
+                        if(bar>swiperp.clientWidth-swiper.clientWidth/2)
+                            bar = swiperp.clientWidth-swiper.clientWidth/2;
+                        if(bar<=0)
+                            bar=swiper.clientWidth/2;
+
+                        let bars = bar-swiper.clientWidth/2
+                        swiper.style.left=bars+"px";
+
+                        
+                        x = (swiperp.clientWidth-swiper.clientWidth)/255;
+                        
+                        let xx = bars/x;
+
+                        if(xx<0)
+                            xx=0;
+                        if(xx>255)
+                            xx=255;
+
+                        if(parseInt(xx)/100>=1){
+                            xx=xx.toString().slice(0, 6);
+                        }   
+                        else if(parseInt(xx)/100>=0.1){
+                            xx=xx.toString().slice(0, 5);
+                        }
+                        else {
+                            xx=xx.toString().slice(0, 4);
+                        }
+
+                        document.getElementById(swiper.id.slice( swiper.id.indexOf("-")+1 ) + "-data").value=parseInt(Number(xx));
+
+                        printColorTable();
+                        printDataList();
+                    }
+                    
+                    swiper.addEventListener("mouseup",mouseUp);
+                    swiperp.addEventListener("mouseleave",mouseLeave);
+
+                    function mouseUp(){
+                        swiperp.removeEventListener("mousemove",mouseMove);
+                        swiperp.removeEventListener("mouseleave",mouseLeave);
+                    }   
+
+                    function mouseLeave(){
+                        swiperp.removeEventListener("mousemove",mouseMove);
+                        swiperp.removeEventListener("mouseleave",mouseLeave);
+                    }
+                }
+                function printColorTable(){
+                    let red = document.getElementById("red-data").value;
+                    let green = document.getElementById("green-data").value;
+                    let blue = document.getElementById("blue-data").value;
+                    document.getElementById("color-table").style=`${document.getElementById("color-table").getAttribute("style")+"; "}background-color:rgb(${red},${green},${blue});`
+                }
+                function printDataList(){
+                    let red = document.getElementById("red-data").value;
+                    let green = document.getElementById("green-data").value;
+                    let blue = document.getElementById("blue-data").value;
+                    document.querySelectorAll("#data-list-rgb input")[0].value = parseInt(red);
+                    document.querySelectorAll("#data-list-rgb input")[1].value = parseInt(green);
+                    document.querySelectorAll("#data-list-rgb input")[2].value = parseInt(blue);
+
+                    document.querySelector("#data-list-hex input").value = rgbToHex(parseInt(red),parseInt(green),parseInt(blue));
+                }
+                function rgbToHex(r,g,b){
+                    let _r = ( parseInt(r/16) ).toString(16).toUpperCase();
+                    _r+=(r%16).toString(16).toUpperCase();
+                    let _g = ( parseInt(g/16) ).toString(16).toUpperCase();
+                    _g+=(g%16).toString(16).toUpperCase();
+                    let _b = ( parseInt(b/16) ).toString(16).toUpperCase();
+                    _b+=(b%16).toString(16).toUpperCase();
+                    return "#" + _r + _g + _b;
+                }
+            }   
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="table-bar">
+                <div id="color-table">
+
+                </div>
+                <div id="opacity-bar-container">
+                    <div id="opacity-value">
+                        <span>Opacity: %</span>
+                        <input type="number" id="opacity-value-text" value=100 min="0" max="100">
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="rgb-bars">
+                <div id="red-bar-container" class="bar-container">
+                    <div id="red-bar" class="bar">
+                        <div class="swiper" id="swiper-red"></div>
+                    </div>
+                    <input type="number" id="red-data" value=0 min="0" max="255">
+                </div>
+                <div id="green-bar-container" class="bar-container"> 
+                    <div id="green-bar" class="bar">
+                        <div class="swiper" id="swiper-green"></div>
+                    </div>
+                    <input type="number" id="green-data" value=0 min="0" max="255">
+                </div>
+                <div id="blue-bar-container" class="bar-container">
+                    <div id="blue-bar" class="bar">
+                        <div class="swiper" id="swiper-blue"></div>
+                    </div>
+                    <input type="number" id="blue-data" value=0 min="0" max="255">
+                </div>
+            </div>
+            <div id="data-list">
+                <div id="data-list-rgb">
+                    <span>RGB:</span>
+                    <span>R:</span>
+                    <input type="number" value=0 min="0" max="255">
+                    <span>G:</span>
+                    <input type="number" value=0 min="0" max="255">
+                    <span>B:</span>
+                    <input type="number" value=0 min="0" max="255">
+                </div>
+                <div id="data-list-hex">
+                    <span>HEX</span>
+                    <input type="text">
+                </div>
+                <div id="data-list-hsl">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
