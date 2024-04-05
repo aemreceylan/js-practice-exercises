@@ -74,6 +74,7 @@ ul{
     list-style-type: none;
     gap: 0.5em;
     color:#535C91;
+    padding:0;
 }
 
 li{
