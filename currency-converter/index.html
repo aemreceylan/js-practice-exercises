@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Currency Converter</h1></header>
+    <div id="container">
+        <div id="top">
+            <div class="top-element" id="te1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="top-element" id="te2">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="top-element" id="te3">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="converter">
+            <div id="inputs">
+                <div id="inputs-top">
+                    <div class="inputdiv" id="inputdiv1">
+                        <input type="number" min="0" id="from_amount" value="0">
+                        <input type="text" id="convert_from" list="convert_from_list" value="---">
+                        <datalist id="convert_from_list">
+                        </datalist>
+                    </div>
+                    <div id="inputs-middle">
+                        <span>TO</span>
+                        <img src="swap.png" title="swap">
+                    </div>
+                    <div class="inputdiv" id="inputdiv2">
+                        <input type="number" min="0" id="to_amount" value="0">
+                        <input type="text" id="convert_to" list="convert_to_list" value="---">
+                        <datalist id="convert_to_list">
+                        </datalist>
+                    </div>
+                </div>
+                <div id="inputs-bottom">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

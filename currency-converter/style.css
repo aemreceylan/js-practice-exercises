@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EEEEEE;
+    font-size: 1.4em;
+}
+
+header{
+    background-color: #31363F;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#container{
+    width: 80%;
+    margin-top: 1em;
+}
+
+#top{
+    border: 1px solid #76ABAE;
+    height: 100px;
+    padding: 0.5em;
+    display: flex;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+
+.top-element{
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    font-size: 0.8em;
+    justify-content: center;
+}
+
+.top-element:not(.top-element:last-child){
+    border-right: 1px solid #76ABAE;
+}
+
+#inputs-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#inputs-bottom{
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.inputdiv{
+    display: flex;
+    width: 40%;
+}
+
+.inputdiv input[type="number"]{
+    outline:none;
+    width: 60%;
+    border-color: #76ABAE;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: inherit;
+}
+
+input[type="text"]{
+    border-color: #76ABAE;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+    outline: none;
+    height: 2em;
+    font-size: inherit;
+    width: 4em;
+}
+
+#inputs-middle{
+    display: flex;
+    flex-direction: column;
+}
+
+#inputs-middle img{
+    height: 1em;
+    cursor: pointer;
+}
