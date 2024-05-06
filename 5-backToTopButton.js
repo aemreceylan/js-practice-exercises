@@ -42,7 +42,7 @@ document.addEventListener("scroll",function(){
 button.addEventListener("click",function(){
     window.scrollTo({
         top:0,
-        behaviour:'smooth'
+        behavior:'smooth'
     });
 })
 });
