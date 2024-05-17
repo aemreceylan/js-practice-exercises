@@ -1,0 +1,58 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+}
+
+main .game-area{
+    border: 1px solid;
+    width: 960px;
+    height: 540px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.game{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start-screen{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 10;
+    width: 25%;
+    height: 25%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.play-button{
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.play-button:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
