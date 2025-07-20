@@ -1,0 +1,220 @@
+#addToCard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5em;
+}
+
+#addToCard-container-img {
+  text-align: center;
+  height: 30%;
+  margin-bottom: 1em;
+}
+
+#addToCard-container-img img {
+  height: 100%;
+  aspect-ratio: 1;
+  border: 0.2em solid var(--dr);
+  border-radius: 1em;
+}
+
+#addToCard-container-contents {
+  border: 0.2em solid var(--dr);
+  border-radius: 1em;
+  padding: 0.5em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#addToCard-container-contents-title {
+  text-align: center;
+  color: var(--dr);
+  font-size: 2em;
+  font-weight: 900;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5em;
+}
+
+#addToCard-container-contents-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 0.1em;
+  background-color: var(--dr);
+}
+
+#addToCard-container-contents-sizes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.addToCard-container-contents-sizes_element {
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 30%;
+  border: 0.2em solid var(--dr);
+  border-radius: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.addToCard-container-contents-sizes_element:hover {
+  border-width: 0.3em;
+}
+
+.selected-size-element {
+  border-width: 0.3em;
+}
+
+.selected-size-element .addToCard-container-contents-sizes_element-size {
+  color: var(--dy);
+}
+
+.selected-size-element .addToCard-container-contents-sizes_element-price {
+  color: var(--dr);
+}
+
+.addToCard-container-contents-sizes_element > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addToCard-container-contents-sizes_element-size {
+  background-color: var(--lr);
+  color: var(--ly);
+  flex-grow: 1;
+}
+
+.addToCard-container-contents-sizes_element-price {
+  background-color: var(--ly);
+  color: var(--lr);
+  flex-grow: 1;
+}
+
+#addToCard-container-contents-ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  row-gap: 0.3em;
+  margin-top: 2em;
+  max-height: 5em;
+  overflow-y: auto;
+  align-items: baseline;
+}
+
+#addToCard-container-contents-ingredients span {
+  background-color: var(--lr);
+  border-radius: 1em;
+  padding: 0.5em 0.4em;
+  color: var(--ly);
+  cursor: pointer;
+}
+
+.removed-ingredient {
+  text-decoration: line-through;
+}
+
+#addToCard-container-contents-dough {
+  margin-top: 2em;
+}
+
+#addToCard-container-contents-dough {
+  display: flex;
+  justify-content: space-around;
+  color: var(--lr);
+  font-weight: 700;
+}
+
+#addToCard-container-contents-dough div {
+  font-size: 1.2em;
+  border: 0.2em solid var(--dr);
+  border-radius: 0.5em;
+  width: 10em;
+  height: 2.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#addToCard-container-contents-dough div:hover {
+  border-width: 0.3em;
+}
+
+.selected-size-element {
+  border-width: 0.3em !important;
+  color: var(--dr);
+}
+
+#addToCard-container-contents-note {
+  flex-grow: 1;
+  margin-top: 1em;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+  border: 0.2em solid var(--dr);
+  resize: none;
+  outline: none;
+  padding: 0.5em;
+  font-family: "Montserrat";
+  background-color: var(--ly);
+}
+
+#addToCard-container-contents-button {
+  margin: 1em auto;
+  width: 50%;
+  display: flex;
+  border-radius: 1em;
+  overflow: hidden;
+  position: relative;
+  border: 0.2rem solid var(--db);
+  user-select: none;
+}
+
+#addToCard-container-contents-button:hover {
+  border-color: var(--lb);
+}
+
+#addToCard-container-contents-button:hover
+  #addToCard-container-contents-button-buy {
+  background-color: var(--lb);
+}
+
+#addToCard-container-contents-button:hover
+  #addToCard-container-contents-button-price {
+  color: var(--lb);
+}
+
+#addToCard-container-contents-button > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  flex-grow: 1;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+#addToCard-container-contents-button-buy {
+  background-color: var(--db);
+  color: white;
+  cursor: pointer;
+}
+
+#addToCard-container-contents-button-price {
+  background-color: white;
+  color: var(--db);
+}

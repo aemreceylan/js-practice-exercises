@@ -1,0 +1,52 @@
+#shoppingCard-container {
+  border: 0.2em solid var(--dr);
+  border-radius: 1em;
+  width: 95%;
+  min-height: 10em;
+  z-index: 99;
+  position: sticky;
+  top: 0;
+  padding: 2em;
+}
+
+#shoppingCard-container-sum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: 0.2rem solid var(--db);
+  border-radius: 1em;
+  overflow: hidden;
+  user-select: none;
+}
+
+#shoppingCard-container-sum:hover {
+  border-color: var(--lb);
+}
+
+#shoppingCard-container-sum:hover #shoppingCard-container-sum-button {
+  background-color: var(--lb);
+}
+
+#shoppingCard-container-sum:hover #shoppingCard-container-sum-price {
+  color: var(--lb);
+}
+
+#shoppingCard-container-sum > div {
+  height: 100%;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+#shoppingCard-container-sum-button {
+  background-color: var(--db);
+  color: white;
+  cursor: pointer;
+}
+
+#shoppingCard-container-sum-price {
+  background-color: white;
+  color: var(--db);
+}

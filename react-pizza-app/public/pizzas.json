@@ -1,0 +1,224 @@
+[
+  {
+    "id": 1,
+    "name": "margarita",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["domates", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 210],
+      ["orta", 280],
+      ["büyük", 395]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/margarita.jpg"
+  },
+  {
+    "id": 2,
+    "name": "sucuklu",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["sucuk", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 210],
+      ["orta", 280],
+      ["büyük", 395]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/sucuklu.jpg"
+  },
+  {
+    "id": 3,
+    "name": "sosisli mısırlı",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["sosis", 1],
+      ["mısır", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 210],
+      ["orta", 280],
+      ["büyük", 395]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/sosisli_mısırlı.jpg"
+  },
+  {
+    "id": 4,
+    "name": "efsane 5li",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["sucuk", 1],
+      ["sosis", 1],
+      ["mantar", 1],
+      ["yeşil biber", 1],
+      ["mısır", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 220],
+      ["orta", 300],
+      ["büyük", 425]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/efsane_5li.jpg"
+  },
+  {
+    "id": 5,
+    "name": "partiterra",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["sucuk", 1],
+      ["salam", 1],
+      ["mantar", 1],
+      ["kırmızı köz biber", 1],
+      ["yeşil biber", 1],
+      ["siyah zeytin", 1],
+      ["mısır", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 220],
+      ["orta", 300],
+      ["büyük", 425]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/partiterra.jpg"
+  },
+  {
+    "id": 6,
+    "name": "vejetaryen",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["beyaz peynir", 1],
+      ["fırınlanmış patlıcan", 1],
+      ["yeşil biber", 1],
+      ["kırmızı köz biber", 1],
+      ["siyah zeytin", 1],
+      ["soğan", 1],
+      ["mısır", 1],
+      ["mantar", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 220],
+      ["orta", 300],
+      ["büyük", 425]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/vejetaryen.jpg"
+  },
+  {
+    "id": 7,
+    "name": "bol bol",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["dilim sucuk", 1],
+      ["küp sucuk", 1],
+      ["şerit sosis", 1],
+      ["kırmızı köz biber", 1],
+      ["yeşil biber", 1],
+      ["mantar", 1],
+      ["soğan", 1],
+      ["mısır", 1],
+      ["siyah zeytin", 1],
+      ["susam", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 230],
+      ["orta", 310],
+      ["büyük", 435]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/bol_bol.jpg"
+  },
+  {
+    "id": 8,
+    "name": "süper sucuklu",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["küp sucuk", 1],
+      ["dilim sucuk", 1],
+      ["siyah zeytin", 1],
+      ["kırmızı köz biber", 1],
+      ["kekik", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 230],
+      ["orta", 310],
+      ["büyük", 435]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/süper_sucuklu.jpg"
+  },
+  {
+    "id": 9,
+    "name": "çıtır tavuklu",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["tavuk parçaları", 1],
+      ["jalapeno biber", 1],
+      ["kırmızı köz biber", 1],
+      ["siyah zeytin", 1],
+      ["mısır", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 230],
+      ["orta", 310],
+      ["büyük", 435]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/çıtır_tavuklu.jpg"
+  },
+  {
+    "id": 10,
+    "name": "bol etli",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["sucuk", 1],
+      ["salam", 1],
+      ["sosis", 1],
+      ["küp domates", 1],
+      ["soğan", 1],
+      ["yeşil biber", 1],
+      ["kırmızı köz biber", 1],
+      ["siyah zeytin", 1],
+      ["mısır", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 230],
+      ["orta", 310],
+      ["büyük", 435]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/bol_etli.jpg"
+  },
+  {
+    "id": 11,
+    "name": "ton balıklı",
+    "ingredients": [
+      ["pizza sosu", 0],
+      ["mozarella peyniri", 0],
+      ["ton balığı", 1],
+      ["mısır", 1],
+      ["teşil biber", 1],
+      ["soğan", 1]
+    ],
+    "sizes_and_prices": [
+      ["küçük", 240],
+      ["orta", 320],
+      ["büyük", 445]
+    ],
+    "dough": ["klasik hamur", "ince hamur"],
+    "img_path": "/pizza-images/ton_balıklı.jpg"
+  }
+]

@@ -1,0 +1,9 @@
+#pizzaList-container {
+  display: flex;
+  width: 100%;
+  row-gap: 3.6em;
+  column-gap: 2.3em;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}

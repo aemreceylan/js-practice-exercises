@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CaveatBrush";
+  src: url("assets/fonts/CaveatBrush-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+:root {
+  --lr: #f38181;
+  --dr: #f13d3d;
+  --ly: #EAFFD0;
+  --dy: #FCE38A;
+  --lb: #95E1D3;
+  --db: #50dbc2;
+}
+
+::selection {
+  background-color: var(--dy);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat";
+  background-color: var(--ly);
+  overflow-y: scroll;
+}
+
+#body-content {
+  display: flex;
+  width: 100%;
+  margin: 5em 0;
+}
+
+main {
+  width: 80%;
+}
+
+aside {
+  flex-grow: 1;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--dy);
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--lr);
+}
